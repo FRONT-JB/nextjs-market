@@ -27,7 +27,8 @@ const Sample = () => {
           Checkout
         </button>
       </div>
-      <div className='overflow-hidden bg-white shadow-2xl rounded-3xl'>
+      <div className='overflow-hidden bg-white shadow-2xl rounded-3xl group'>
+        {/* Container 에 group 지정 */}
         <div className='p-6 bg-blue-500 pb-14'>
           <span className='text-2xl text-white'>Profile</span>
         </div>
@@ -37,7 +38,8 @@ const Sample = () => {
               <span className='text-sm text-gray-500'>Orders</span>
               <span className='font-medium'>$340</span>
             </div>
-            <div className='w-24 h-24 bg-red-400 rounded-full' />
+            <div className='w-24 h-24 transition-colors rounded-full bg-zinc-300 group-hover:bg-red-300' />
+            {/* group ( Container ) 에 hover 했을때 // group-hover */}
             <div className='flex flex-col items-center'>
               <span className='text-sm text-gray-500'>Spent</span>
               <span className='font-medium'>$2,310</span>
@@ -85,6 +87,49 @@ const Sample = () => {
           </div>
         </div>
       </div>
+      <form className='flex flex-col p-5 space-y-2 bg-blue-300 focus-within:bg-blue-100'>
+        <input
+          type='text'
+          required
+          placeholder='username'
+          className='px-2 border-yellow-300 required:border-2 disabled:bg-yellow-600 valid:bg-teal-500'
+        />
+        <input
+          type='password'
+          required
+          placeholder='password'
+          className='px-2 invalid:bg-red-300'
+        />
+        <input
+          type='submit'
+          value='login'
+          placeholder='username'
+          className='bg-white'
+        />
+      </form>
+      <form className='flex flex-col p-5 space-y-2 bg-white'>
+        <input
+          type='text'
+          required
+          placeholder='username'
+          className='px-2 border border-gray-500 rounded-md outline-none peer'
+        />
+        <span className='hidden peer-invalid:text-red-500 peer-invalid:block'>
+          This input is invalid
+        </span>
+        <span className='hidden peer-valid:text-teal-500 peer-valid:block'>
+          Awesome Username
+        </span>
+        <span className='hidden peer-hover:text-amber-500 peer-hover:block'>
+          Peer Hover
+        </span>
+        <input
+          type='submit'
+          value='login'
+          placeholder='username'
+          className='bg-white border border-gray-500 rounded-lg'
+        />
+      </form>
     </div>
   );
 };
