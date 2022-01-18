@@ -1,7 +1,7 @@
 const Sample = () => {
   return (
     <div className='grid min-h-screen gap-10 px-20 py-20 bg-slate-400'>
-      <div className='p-10 bg-white shadow-2xl rounded-3xl'>
+      <div className='p-10 bg-white shadow-2xl rounded-3xl sm:bg-red-400 md:bg-teal-500 lg:bg-indigo-400 xl:bg-amber-400 2xl:bg-pink-200'>
         <span className='text-2xl font-semibold'>SelectItem</span>
         <ul>
           {[1, 2, 3, 4, 5].map((i) => (
@@ -130,7 +130,6 @@ const Sample = () => {
           className='bg-white border border-gray-500 rounded-lg'
         />
       </form>
-
       <div className='flex flex-col p-5 bg-white space-y2'>
         <details className='select-none open:text-white open:bg-indigo-400'>
           <summary className='cursor-pointer '>What is my fav. food.</summary>
@@ -139,7 +138,6 @@ const Sample = () => {
           </span>
         </details>
       </div>
-
       <div className='flex flex-col p-5 bg-white space-y2'>
         <ul className='list-decimal marker:text-teal-300'>
           <li>hi</li>
@@ -147,7 +145,6 @@ const Sample = () => {
           <li>hi</li>
         </ul>
       </div>
-
       <div className='flex flex-col p-5 bg-white space-y2'>
         <input
           type='file'
