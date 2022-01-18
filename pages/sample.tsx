@@ -1,6 +1,6 @@
 const Sample = () => {
   return (
-    <div className='grid min-h-screen gap-10 px-20 py-20 bg-slate-400'>
+    <div className='grid min-h-screen gap-10 px-20 py-20 xl:place-content-center lg:grid-cols-2 xl:grid-cols-3 bg-slate-400'>
       <div className='p-10 bg-white shadow-2xl rounded-3xl sm:bg-red-400 md:bg-teal-500 lg:bg-indigo-400 xl:bg-amber-400 2xl:bg-pink-200'>
         <span className='text-2xl font-semibold'>SelectItem</span>
         <ul>
@@ -29,7 +29,7 @@ const Sample = () => {
       </div>
       <div className='overflow-hidden bg-white shadow-2xl rounded-3xl group'>
         {/* Container 에 group 지정 */}
-        <div className='p-6 bg-blue-500 pb-14'>
+        <div className='p-6 portrait:bg-blue-500 landscape:bg-teal-500 pb-14 xl:pb-52'>
           <span className='text-2xl text-white'>Profile</span>
         </div>
         <div className='relative p-6 bg-white rounded-3xl -top-5'>
@@ -51,7 +51,7 @@ const Sample = () => {
           </div>
         </div>
       </div>
-      <div className='p-10 bg-white shadow-2xl rounded-3xl '>
+      <div className='p-10 bg-white shadow-2xl rounded-3xl lg:col-span-2 xl:col-span-1'>
         <div className='flex items-center justify-between mb-5'>
           <span>←</span>
           <div className='space-x-3'>
