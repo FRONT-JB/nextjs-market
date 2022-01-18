@@ -3,14 +3,22 @@ const Sample = () => {
     <div className='grid min-h-screen gap-10 px-20 py-20 bg-slate-400'>
       <div className='p-10 bg-white shadow-2xl rounded-3xl'>
         <span className='text-2xl font-semibold'>SelectItem</span>
-        <div className='flex justify-between my-2'>
-          <span className='text-gray-500'>Grey Chair</span>
-          <span className='font-semibold'>$19</span>
-        </div>
-        <div className='flex justify-between'>
-          <span className='text-gray-500'>Grey Chair</span>
-          <span className='font-semibold'>$19</span>
-        </div>
+        <ul>
+          {[1, 2, 3, 4, 5].map((i) => (
+            <li key={i} className='flex justify-between my-2'>
+              <span className='text-gray-500'>Grey Chair</span>
+              <span className='font-semibold'>$19</span>
+            </li>
+          ))}
+        </ul>
+        <ul>
+          {['a', 'b', 'c', ''].map((item, index) => (
+            <li key={index} className='p-1 bg-yellow-100 empty:hidden'>
+              {/* empty style */}
+              {item}
+            </li>
+          ))}
+        </ul>
         <div className='flex justify-between pt-2 mt-2 border-t-2 border-dashed'>
           <span>total</span>
           <span className='font-semibold'>$10</span>
