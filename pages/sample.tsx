@@ -130,6 +130,36 @@ const Sample = () => {
           className='bg-white border border-gray-500 rounded-lg'
         />
       </form>
+
+      <div className='flex flex-col p-5 bg-white space-y2'>
+        <details className='select-none open:text-white open:bg-indigo-400'>
+          <summary className='cursor-pointer '>What is my fav. food.</summary>
+          <span className='selection:bg-indigo-300 selection:text-white'>
+            Options 1
+          </span>
+        </details>
+      </div>
+
+      <div className='flex flex-col p-5 bg-white space-y2'>
+        <ul className='list-decimal marker:text-teal-300'>
+          <li>hi</li>
+          <li>hi</li>
+          <li>hi</li>
+        </ul>
+      </div>
+
+      <div className='flex flex-col p-5 bg-white space-y2'>
+        <input
+          type='file'
+          className='file:transition-colors file:cursor-pointer file:border-0 file:rounded-xl file:px-2 file:bg-amber-200 file:hover:text-amber-400 file:hover:bg-white file:hover:border-amber-400 file:hover:border'
+        />
+      </div>
+      <div className='flex flex-col p-5 bg-white space-y2'>
+        <p className='first-letter:text-5xl first-letter:text-pink-500 first-letter:hover:text-purple-200 first-line:text-orange-400'>
+          Hello Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste,
+          debitis.
+        </p>
+      </div>
     </div>
   );
 };
