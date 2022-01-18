@@ -1,26 +1,39 @@
 const Sample = () => {
   return (
-    <div className='grid min-h-screen gap-10 px-20 py-20 bg-slate-400'>
-      <div className='p-10 bg-white shadow-2xl rounded-3xl'>
-        <span className='text-2xl font-semibold'>SelectItem</span>
-        <div className='flex justify-between my-2'>
-          <span className='text-gray-500'>Grey Chair</span>
-          <span className='font-semibold'>$19</span>
-        </div>
-        <div className='flex justify-between'>
-          <span className='text-gray-500'>Grey Chair</span>
-          <span className='font-semibold'>$19</span>
-        </div>
+    <div className='grid min-h-screen gap-10 px-20 py-20 xl:place-content-center lg:grid-cols-2 xl:grid-cols-3 bg-slate-400'>
+      <div className='p-10 bg-white shadow-2xl dark:bg-gray-800 rounded-3xl sm:bg-red-400 md:bg-teal-500 lg:bg-indigo-400 xl:bg-amber-400 2xl:bg-pink-200'>
+        <span className='text-2xl font-semibold dark:text-white'>
+          SelectItem
+        </span>
+        <ul>
+          {[1, 2, 3, 4, 5].map((i) => (
+            <li key={i} className='flex justify-between my-2'>
+              <span className='text-gray-500 dark:text-gray-50'>
+                Grey Chair
+              </span>
+              <span className='font-semibold dark:text-gray-50'>$19</span>
+            </li>
+          ))}
+        </ul>
+        <ul>
+          {['a', 'b', 'c', ''].map((item, index) => (
+            <li key={index} className='p-1 bg-yellow-100 empty:hidden'>
+              {/* empty style */}
+              {item}
+            </li>
+          ))}
+        </ul>
         <div className='flex justify-between pt-2 mt-2 border-t-2 border-dashed'>
-          <span>total</span>
-          <span className='font-semibold'>$10</span>
+          <span className='dark:text-gray-50'>total</span>
+          <span className='font-semibold dark:text-gray-50'>$10</span>
         </div>
-        <button className='w-1/2 p-3 mx-auto mt-5 text-center text-white bg-blue-500 rounded-xl hover:bg-teal-500 hover:text-black active:bg-yellow-500 focus:text-red-500'>
+        <button className='w-1/2 p-3 mx-auto mt-5 text-center text-white bg-blue-500 dark:border-white dark:hover:text-white dark:border dark:bg-black rounded-xl dark:hover:bg-black hover:bg-teal-500 hover:text-black active:bg-yellow-500 focus:text-red-500'>
           Checkout
         </button>
       </div>
-      <div className='overflow-hidden bg-white shadow-2xl rounded-3xl'>
-        <div className='p-6 bg-blue-500 pb-14'>
+      <div className='overflow-hidden bg-white shadow-2xl rounded-3xl group'>
+        {/* Container 에 group 지정 */}
+        <div className='p-6 portrait:bg-blue-500 landscape:bg-teal-500 pb-14 xl:pb-52'>
           <span className='text-2xl text-white'>Profile</span>
         </div>
         <div className='relative p-6 bg-white rounded-3xl -top-5'>
@@ -29,7 +42,8 @@ const Sample = () => {
               <span className='text-sm text-gray-500'>Orders</span>
               <span className='font-medium'>$340</span>
             </div>
-            <div className='w-24 h-24 bg-red-400 rounded-full' />
+            <div className='w-24 h-24 transition-colors rounded-full bg-zinc-300 group-hover:bg-red-300' />
+            {/* group ( Container ) 에 hover 했을때 // group-hover */}
             <div className='flex flex-col items-center'>
               <span className='text-sm text-gray-500'>Spent</span>
               <span className='font-medium'>$2,310</span>
@@ -41,7 +55,7 @@ const Sample = () => {
           </div>
         </div>
       </div>
-      <div className='p-10 bg-white shadow-2xl rounded-3xl '>
+      <div className='p-10 bg-white shadow-2xl rounded-3xl lg:col-span-2 xl:col-span-1'>
         <div className='flex items-center justify-between mb-5'>
           <span>←</span>
           <div className='space-x-3'>
@@ -76,6 +90,76 @@ const Sample = () => {
             </button>
           </div>
         </div>
+      </div>
+      <form className='flex flex-col p-5 space-y-2 bg-blue-300 focus-within:bg-blue-100'>
+        <input
+          type='text'
+          required
+          placeholder='username'
+          className='px-2 border-yellow-300 required:border-2 disabled:bg-yellow-600 valid:bg-teal-500'
+        />
+        <input
+          type='password'
+          required
+          placeholder='password'
+          className='px-2 invalid:bg-red-300'
+        />
+        <input
+          type='submit'
+          value='login'
+          placeholder='username'
+          className='bg-white'
+        />
+      </form>
+      <form className='flex flex-col p-5 space-y-2 bg-white'>
+        <input
+          type='text'
+          required
+          placeholder='username'
+          className='px-2 border border-gray-500 rounded-md outline-none peer'
+        />
+        <span className='hidden peer-invalid:text-red-500 peer-invalid:block'>
+          This input is invalid
+        </span>
+        <span className='hidden peer-valid:text-teal-500 peer-valid:block'>
+          Awesome Username
+        </span>
+        <span className='hidden peer-hover:text-amber-500 peer-hover:block'>
+          Peer Hover
+        </span>
+        <input
+          type='submit'
+          value='login'
+          placeholder='username'
+          className='bg-white border border-gray-500 rounded-lg'
+        />
+      </form>
+      <div className='flex flex-col p-5 bg-white space-y2'>
+        <details className='select-none open:text-white open:bg-indigo-400'>
+          <summary className='cursor-pointer '>What is my fav. food.</summary>
+          <span className='selection:bg-indigo-300 selection:text-white'>
+            Options 1
+          </span>
+        </details>
+      </div>
+      <div className='flex flex-col p-5 bg-white space-y2'>
+        <ul className='list-decimal marker:text-teal-300'>
+          <li>hi</li>
+          <li>hi</li>
+          <li>hi</li>
+        </ul>
+      </div>
+      <div className='flex flex-col p-5 bg-white space-y2'>
+        <input
+          type='file'
+          className='file:transition-colors file:cursor-pointer file:border-0 file:rounded-xl file:px-2 file:bg-amber-200 file:hover:text-amber-400 file:hover:bg-white file:hover:border-amber-400 file:hover:border'
+        />
+      </div>
+      <div className='flex flex-col p-5 bg-white space-y2'>
+        <p className='first-letter:text-5xl first-letter:text-pink-500 first-letter:hover:text-purple-200 first-line:text-orange-400'>
+          Hello Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste,
+          debitis.
+        </p>
       </div>
     </div>
   );
