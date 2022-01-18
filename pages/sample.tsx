@@ -41,7 +41,7 @@ const Sample = () => {
           </div>
         </div>
       </div>
-      <div className='p-10 bg-white shadow-2xl rounded-3xl'>
+      <div className='p-10 bg-white shadow-2xl rounded-3xl '>
         <div className='flex items-center justify-between mb-5'>
           <span>←</span>
           <div className='space-x-3'>
@@ -55,9 +55,9 @@ const Sample = () => {
           <span className='text-xs text-gray-500'>Chair</span>
           <div className='flex items-center justify-between mt-3 mb-5'>
             <div className='space-x-2'>
-              <button className='w-5 h-5 bg-yellow-500 rounded-full' />
-              <button className='w-5 h-5 bg-indigo-500 rounded-full' />
-              <button className='w-5 h-5 bg-teal-500 rounded-full' />
+              <button className='w-5 h-5 transition-all bg-yellow-500 rounded-full focus:ring-2 ring-offset-2 ring-yellow-500' />
+              <button className='w-5 h-5 transition-all bg-indigo-500 rounded-full focus:ring-2 ring-offset-2 ring-indigo-500' />
+              <button className='w-5 h-5 transition-all bg-teal-500 rounded-full focus:ring-2 ring-offset-2 ring-teal-500' />
             </div>
             <div className='flex items-center space-x-5'>
               <button className='flex items-center justify-center w-8 text-xl text-gray-500 bg-blue-200 rounded-lg aspect-square'>
