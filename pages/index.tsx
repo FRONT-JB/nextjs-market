@@ -60,7 +60,7 @@ const Home: NextPage = () => {
         ))}
         <button
           type='button'
-          className='fixed p-3 text-white transition-all bg-orange-400 rounded-full shadow-xl cursor-pointer bottom-5 right-5 hover:bg-orange-500'
+          className='fixed p-3 text-white transition-all bg-orange-400 rounded-full shadow-xl cursor-pointer bottom-24 right-5 hover:bg-orange-500'
         >
           <svg
             className='w-6 h-6'

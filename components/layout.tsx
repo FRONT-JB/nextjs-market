@@ -43,7 +43,7 @@ const Layout = ({ title, canGoBack, hasTabBar, children }: Props) => {
         ) : null}
         {title ? <span>{title}</span> : null}
       </div>
-      <div className={classNames('pt-16', { 'pb-24': hasTabBar })}>
+      <div className={classNames('pt-16', { 'pb-20': hasTabBar })}>
         {children}
       </div>
       {hasTabBar ? (
