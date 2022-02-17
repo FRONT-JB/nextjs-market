@@ -27,11 +27,11 @@ const Upload: NextPage = () => {
       <div className='my-6'>
         <label
           htmlFor='price'
-          className='block text-sm font-medium text-gray-700'
+          className='block text-sm font-medium text-gray-700 cursor-pointer select-none'
         >
           Price
         </label>
-        <div className='relative flex items-center rounded-md shadow-sm'>
+        <div className='relative flex items-center mt-2 rounded-md shadow-sm'>
           <div className='absolute left-0 flex items-center justify-center pl-3 pointer-events-none'>
             <span className='text-sm text-gray-500'>$</span>
           </div>
@@ -47,10 +47,16 @@ const Upload: NextPage = () => {
         </div>
       </div>
       <div>
-        <label>Description</label>
+        <label
+          htmlFor='description'
+          className='text-sm font-medium text-gray-700 cursor-pointer select-none'
+        >
+          Description
+        </label>
         <textarea
           rows={4}
-          className='w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-1 focus:ring-orange-500 focus:border-orange-500'
+          id='description'
+          className='w-full mt-2 border-gray-300 rounded-md shadow-sm focus:ring-1 focus:ring-orange-500 focus:border-orange-500'
         />
       </div>
       <button
