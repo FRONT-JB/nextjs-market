@@ -1,3 +1,6 @@
 {
-  "css.customData": [".vscode/css_custom.json"]
+  "css.customData": [".vscode/css_custom.json"],
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  }
 }
