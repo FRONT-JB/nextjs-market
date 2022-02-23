@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import { cls } from "../libs/utils";
 
 interface MessageProps {
   message: string;
@@ -6,20 +6,22 @@ interface MessageProps {
   avatarUrl?: string;
 }
 
-const Message = ({ message, avatarUrl, reversed }: MessageProps) => {
+export default function Message({
+  message,
+  avatarUrl,
+  reversed,
+}: MessageProps) {
   return (
     <div
-      className={classNames('flex  items-start', {
-        'flex-row-reverse space-x-reverse': reversed,
-        'space-x-2': !reversed,
-      })}
+      className={cls(
+        "flex  items-start",
+        reversed ? "flex-row-reverse space-x-reverse" : "space-x-2"
+      )}
     >
-      <div className='w-8 h-8 rounded-full bg-slate-400' />
-      <div className='w-1/2 p-2 text-sm text-gray-700 border border-gray-300 rounded-md'>
+      <div className="w-8 h-8 rounded-full bg-slate-400" />
+      <div className="w-1/2 text-sm text-gray-700 p-2 border border-gray-300 rounded-md">
         <p>{message}</p>
       </div>
     </div>
   );
-};
-
-export default Message;
+}

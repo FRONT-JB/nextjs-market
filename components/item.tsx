@@ -8,7 +8,13 @@ interface ItemProps {
   hearts: number;
 }
 
-const Item = ({ title, price, comments, hearts, id }: ItemProps) => {
+export default function Item({
+  title,
+  price,
+  comments,
+  hearts,
+  id,
+}: ItemProps) {
   return (
     <Link href={`/items/${id}`}>
       <a className='flex justify-between px-4 pt-5 cursor-pointer'>
@@ -58,6 +64,4 @@ const Item = ({ title, price, comments, hearts, id }: ItemProps) => {
       </a>
     </Link>
   );
-};
-
-export default Item;
+}
