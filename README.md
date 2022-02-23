@@ -2,9 +2,13 @@
 
 Serverless Carrot Market Clone using NextJS, Tailwind, Prisma, PlanetScale and Cloudflare.
 
+---
+
 `pscale connect nextjs-market`
 
     Connect DB
+
+---
 
 `env Url`
 
@@ -14,7 +18,9 @@ Serverless Carrot Market Clone using NextJS, Tailwind, Prisma, PlanetScale and C
 
     mysql://127.0.0.1:3306/nextjs-market
     db://url:3306/projectName
-
+    
+ ---
+ 
 `Prisma Schema`
 
 **prisma/schema.prisma**
@@ -37,6 +43,9 @@ model User {
 
 ```
 
+---
+
+
 `npx prisma generate`
 
 **libs/client.ts**
@@ -45,17 +54,23 @@ model User {
 
     DB에게 어떻게 말을걸지 Client를 생성
     PrismaClient가 node_modules에 d.ts로 정의해주어
-    스키마를 바탕으로 생성된 타입스크립트 타입 정보를 모두 확인 할 수 있다.
+    스키마를 바탕으로 생성된 타입스크립트 타입정보를 모두 확인할 수 있다.
+
+---
 
 `npx prisma db push`
 
     Prisma가 schema.prisma 파일을 확인해서
     plantScale에 전달한다.
 
+---
+
 `npx prisma studio`
 
     Prisma Playground
     ( GraphQL Playground 처럼 현재 DB 상태를 볼 수 있다. )
+
+---
 
 `Api Routes`
 
