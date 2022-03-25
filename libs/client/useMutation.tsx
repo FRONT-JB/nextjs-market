@@ -3,15 +3,6 @@ import { useState } from 'react';
 const useMutation = (
   url: string,
 ): [(data: any) => void, { loading: boolean; data: any; error: any }] => {
-  const [fetching, setFetching] = useState<{
-    loading: boolean;
-    data: any;
-    error: any;
-  }>({
-    loading: false,
-    data: undefined,
-    error: undefined,
-  });
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState<undefined | any>(undefined);
   const [error, setError] = useState<undefined | any>(undefined);
