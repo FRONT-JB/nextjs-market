@@ -1,43 +1,49 @@
 import client from '@libs/server/client';
-import withHandler from '@libs/server/withHandler';
+import withHandler, { ResponseType } from '@libs/server/withHandler';
 import { NextApiRequest, NextApiResponse } from 'next';
 
-async function handler(req: NextApiRequest, res: NextApiResponse) {
+// User를 조회하는 영역
+// const user = await client.user.upsert({
+//   where: {
+//     ...payload,
+//   },
+//   create: {
+//     name: 'Anonymous',
+//     ...payload,
+//   },
+//   update: {},
+// });
+
+async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse<ResponseType>,
+) {
   const { phone, email } = req.body;
-  const payload = phone ? { phone: +phone } : { email };
+  const user = phone ? { phone: +phone } : email ? { email } : null;
+  const payload = Math.floor(100000 + Math.random() * 900000) + '';
 
-  // User를 조회하는 영역
-  // const user = await client.user.upsert({
-  //   where: {
-  //     ...payload,
-  //   },
-  //   create: {
-  //     name: 'Anonymous',
-  //     ...payload,
-  //   },
-  //   update: {},
-  // });
+  if (!user) return res.status(400).json({ ok: false });
 
-  // 이곳에서 위의 유저를 조회한다.
-  // 조회 후에 유저정보가 있으면 Token을 생성
   const token = await client.token.create({
     data: {
-      payload: '1234',
+      payload,
       user: {
         connectOrCreate: {
           where: {
-            ...payload,
+            ...user,
           },
           create: {
             name: 'Anonymous',
-            ...payload,
+            ...user,
           },
         },
       },
     },
   });
 
-  return res.status(200).end();
+  return res.json({
+    ok: true,
+  });
 }
 
 export default withHandler('POST', handler);
