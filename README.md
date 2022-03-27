@@ -100,6 +100,8 @@ const upsertUser = await prisma.user.upsert({
 });
 ```
 
+---
+
 `Api Routes`
 
 **pages/api**
