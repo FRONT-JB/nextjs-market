@@ -4,6 +4,14 @@ Serverless Carrot Market Clone using NextJS, Tailwind, Prisma, PlanetScale and C
 
 ---
 
+`brew install planetscale/tap/pscale`
+
+    PlanetScale Install
+
+`brew install mysql-client`
+
+    MySQL Client Install
+
 `pscale connect nextjs-market`
 
     Connect DB
@@ -18,9 +26,9 @@ Serverless Carrot Market Clone using NextJS, Tailwind, Prisma, PlanetScale and C
 
     mysql://127.0.0.1:3306/nextjs-market
     db://url:3306/projectName
-    
- ---
- 
+
+---
+
 `Prisma Schema`
 
 **prisma/schema.prisma**
@@ -44,7 +52,6 @@ model User {
 ```
 
 ---
-
 
 `npx prisma generate`
 
