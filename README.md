@@ -93,6 +93,14 @@ model Token {
     Prisma가 schema.prisma 파일을 확인해서
     plantScale에 전달한다.
 
+`https://planetscale.com/`
+
+    db push 후에 확인할 순서
+    1. https://planetscale.com/ : Login
+    2. Dashboard                : Project 선택
+    3. Branches                 : Branch 선택
+    4. Schema                   : Refresh schema
+
 ---
 
 `npx prisma studio`
