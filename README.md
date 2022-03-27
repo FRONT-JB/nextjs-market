@@ -48,6 +48,29 @@ model User {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+```
+
+```js
+
+// model Field 에서 참조값으로 사용할 경우 아래의 datasource db 에서
+// referentialIntegrity = "prisma" 을 주석처리 한 뒤에
+// 참조로 쓰게할 model Field 에서 자동완성을 시켜준다.
+// VSCODE 에서 아직 완전히 지원하지 않기 때문에 위의 방법으로 작성
+
+datasource db {
+  provider             = "mysql"
+  url                  = env("DATABASE_URL")
+  referentialIntegrity = "prisma"
+}
+
+model Token {
+  id        Int      @id @default(autoincrement())
+  payload   String   @unique
+  user      User     @relation(fields: [userId], references: [id]) // relation 연결
+  userId    Int                                                    // relation 연결시 자동으로 생성
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
 
 ```
 
