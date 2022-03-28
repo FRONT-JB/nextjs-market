@@ -1,6 +1,7 @@
+import { NextApiRequest, NextApiResponse } from 'next';
+import twilio from 'twilio';
 import client from '@libs/server/client';
 import withHandler, { ResponseType } from '@libs/server/withHandler';
-import { NextApiRequest, NextApiResponse } from 'next';
 
 // User를 조회하는 영역
 // const user = await client.user.upsert({
@@ -13,6 +14,8 @@ import { NextApiRequest, NextApiResponse } from 'next';
 //   },
 //   update: {},
 // });
+
+const twilioClient = twilio(process.env.TWILIO_SID, process.env.TWILIO_TOKEN);
 
 async function handler(
   req: NextApiRequest,
@@ -41,6 +44,14 @@ async function handler(
     },
   });
 
+  if (phone) {
+    const message = await twilioClient.messages.create({
+      messagingServiceSid: process.env.TWILIO_MSID,
+      to: process.env.MY_PHONE!,
+      body: `Your login token is ${payload}`,
+    });
+    console.log(message);
+  }
   return res.json({
     ok: true,
   });
